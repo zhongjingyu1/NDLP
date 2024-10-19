@@ -102,8 +102,9 @@ python lmpt/train.py configs/coco/LT_resnet50_pfc_DB.py \
 We use code from [DBL](https://github.com/wutong16/DistributionBalancedLoss) and [LMPT](https://github.com/richard-peng-xia/LMPT). We thank the authors for releasing their code.
 ## :mailbox_closed: Contact
 If you have any questions, please create an issue on this repository or contact at [23171214508@stu.xidian.edu.cn](mailto:23171214508@stu.xidian.edu.cn).
-## :pencil2: Citing
+<!-- ## :pencil2: Citing
 If you find this code useful, please consider to cite our work.
 ```
-```
+``` -->
+
 
