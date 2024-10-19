@@ -62,7 +62,7 @@ Shell
 ```
 ## :page_with_curl: Usage
 ```bash
-CUDA_VISIBLE_DEVICES=0 python lmpt/train.py \
+python lmpt/train.py \
 --dataset 'voc-lt' \
 --seed '0' \
 --batch_size 32 \
