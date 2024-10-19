@@ -8,6 +8,8 @@
 <img src='./assets/figure1.png' width=1200>
 (a) Summarize the proposed LT-PML task. (b) Describes the first key challenge of the LT-PML task: noisy labels and long-tailed distributions hinder each other. (c) Describes the second key challenge: label co-occurrence.
 
+<img src='./assets/figure2.png' width=800>
+
 ## :closed_book: Requirements 
 * [Pytorch](https://pytorch.org/)
 * [Sklearn](https://scikit-learn.org/stable/)
