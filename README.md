@@ -5,7 +5,7 @@
 ![long](https://img.shields.io/badge/State%20of%20the%20Art-Long--Tailed%20Partial%20Multi--Label%20Learning%20on%20COCO--MLC-blue)  
 
 ## :video_camera: Problem description of LT-PML
-<img src='./assets/figure1.png' width=1200>
+<img src='./assets/figure1.png' width=800>
 (a) Summarize the proposed LT-PML task. (b) Describes the first key challenge of the LT-PML task: noisy labels and long-tailed distributions hinder each other. (c) Describes the second key challenge: label co-occurrence.
 <img src='./assets/figure2.png' width=400>
 
