@@ -3,6 +3,9 @@
 
 ![long](https://img.shields.io/badge/State%20of%20the%20Art-Long--Tailed%20Partial%20Multi--Label%20Learning%20on%20VOC--MLC-blue)  
 ![long](https://img.shields.io/badge/State%20of%20the%20Art-Long--Tailed%20Partial%20Multi--Label%20Learning%20on%20COCO--MLC-blue)  
+
+<img src='./assets/figure1.png' width=800>
+
 ## :closed_book: Requirements 
 * [Pytorch](https://pytorch.org/)
 * [Sklearn](https://scikit-learn.org/stable/)
