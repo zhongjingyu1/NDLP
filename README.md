@@ -61,14 +61,27 @@ Shell
                 ├── SegementationObject
 ```
 ## :page_with_curl: Usage
+### VOC-MLT
 ```bash
-python lmpt/train.py \
+python lmpt/train.py \ configs/voc/LT_resnet50_pfc_DB.py
 --dataset 'voc-lt' \
 --seed '0' \
 --batch_size 32 \
---epochs 20 \
+--epochs 10 \
 --gamma 3
 --partial_rate 0.3/0.5 \
+--eta 0.9 \
+--alpha_range 0.4,0.8 \
+```
+### COCO-MLT
+```bash
+python lmpt/train.py \ configs/coco/LT_resnet50_pfc_DB.py
+--dataset 'voc-lt' \
+--seed '0' \
+--batch_size 32 \
+--epochs 10 \
+--gamma 2
+--partial_rate 0.05/0.1 \
 --eta 0.9 \
 --alpha_range 0.4,0.8 \
 ```
