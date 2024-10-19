@@ -64,7 +64,7 @@ Shell
 ## :page_with_curl: Usage
 ### VOC-MLT
 ```bash
-python lmpt/train.py \ configs/voc/LT_resnet50_pfc_DB.py
+python lmpt/train.py configs/voc/LT_resnet50_pfc_DB.py \
 --dataset 'voc-lt' \
 --seed '0' \
 --batch_size 32 \
@@ -76,7 +76,7 @@ python lmpt/train.py \ configs/voc/LT_resnet50_pfc_DB.py
 ```
 ### COCO-MLT
 ```bash
-python lmpt/train.py \ configs/coco/LT_resnet50_pfc_DB.py
+python lmpt/train.py configs/coco/LT_resnet50_pfc_DB.py \ 
 --dataset 'voc-lt' \
 --seed '0' \
 --batch_size 32 \
