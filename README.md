@@ -90,14 +90,14 @@ python lmpt/train.py configs/coco/LT_resnet50_pfc_DB.py \
 #### COCO-MLT
 |   Backbone  | $$\rho$$  |    Total   |    Head   |  Medium  |   Tail  |      Download      |
 | :---------: |:---------:| :------------: | :-----------: | :---------: | :---------: | :----------------: |
-|  ResNet-50  |    0.05   |    40.06   |    41.87  |  40.57   | 37.80   | [model](https://github.com/zhongjingyu1/NDLP)   |
-|  ResNet-50  |    0.1    |    35.21   |    40.65  |  32.83   | 33.55   | [model](https://github.com/zhongjingyu1/NDLP)   |
+|  ResNet-50  |    0.05   |    40.06   |    41.87  |  40.57   | 37.80   | [model](https://drive.google.com/drive/folders/1ju2zTv6pOuso8wBixN4RqLtszU8d8WDk?hl=zh-cn)   |
+|  ResNet-50  |    0.1    |    35.21   |    40.65  |  32.83   | 33.55   | [model](https://drive.google.com/drive/folders/1ju2zTv6pOuso8wBixN4RqLtszU8d8WDk?hl=zh-cn)   |
 
 #### VOC-MLT
 |   Backbone  | $$\rho$$  |    Total   |    Head   |  Medium  |   Tail  |      Download      |
 | :---------: |:---------:| :------------: | :-----------: | :---------: | :---------: | :----------------: |
-|  ResNet-50  |    0.3    |    59.51   |    59.54  |  70.33   | 51.38   | [model](https://github.com/zhongjingyu1/NDLP)   |
-|  ResNet-50  |    0.5    |    40.76   |    43.09  |  52.59   | 30.13   | [model](https://github.com/zhongjingyu1/NDLP)   |
+|  ResNet-50  |    0.3    |    59.51   |    59.54  |  70.33   | 51.38   | [model](https://drive.google.com/drive/folders/1ju2zTv6pOuso8wBixN4RqLtszU8d8WDk?hl=zh-cn)   |
+|  ResNet-50  |    0.5    |    40.76   |    43.09  |  52.59   | 30.13   | [model](https://drive.google.com/drive/folders/1ju2zTv6pOuso8wBixN4RqLtszU8d8WDk?hl=zh-cn)   |
 ## :heartpulse: Acknowledgements
 We use code from [DBL](https://github.com/wutong16/DistributionBalancedLoss) and [LMPT](https://github.com/richard-peng-xia/LMPT). We thank the authors for releasing their code.
 ## :mailbox_closed: Contact
