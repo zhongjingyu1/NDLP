@@ -1,4 +1,4 @@
-# Noise-Correction-and-Distribution-Fine-Tuning
+# NDLP
 #### Noise Correction and Distribution Fine-Tuning for Long-Tailed Partial Multi-Label Learning
 
 ![long](https://img.shields.io/badge/State%20of%20the%20Art-Long--Tailed%20Partial%20Multi--Label%20Learning%20on%20VOC--MLC-blue)  
