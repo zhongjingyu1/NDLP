@@ -5,13 +5,14 @@
 ![long](https://img.shields.io/badge/State%20of%20the%20Art-Long--Tailed%20Partial%20Multi--Label%20Learning%20on%20COCO--MLC-blue)  
 
 ## :video_camera: Problem description of LT-PML
-<img src='./assets/intr1.png' width=800>
+<img src='./assets/intr1.png' width=600>
 (a) Summarize the proposed LT-PML task. (b) Describes the first key challenge of the LT-PML task: noisy labels and long-tailed distributions hinder each other. (c) Describes the second key challenge: label co-occurrence.
-<img src='./assets/intr2.png' width=400>
+<img src='./assets/intr2.png' width=600>
 
 ## :scroll: Abstract 
 Long-tailed multi-label classification (LT-MLC) assumes that all samples are noise-free. The presence of label noise makes the prior class distribution unreliable. To address this problem, we introduce a new task, long-tailed partial multi-label learning (LT-PML), to consider noisy learning environments. LT-PML aims to generalize a classifier from long-tailed training samples, where each sample is associated with a set of candidate labels and only some of the labels are accurate. Not surprisingly, we find that the performance of most MLC and LT-MLC methods degrades significantly in the face of this task. Therefore, we propose a Noise correction and Distribution fine-tuning framework for LT-PML (NDLP). First, we estimate the confidence level of each label as the ground truth to mitigate the noisy label interference, and further use it to match the class distribution. In addition, we propose a noise correction method that uses prediction probabilities to re-weight classes to mitigate the negative contribution of the noisy labels to the positive samples. Finally, we develop a distributional fine-tuning to correct the estimation error due to label co-occurrence. The results indicate that NDLP significantly outperforms existing methods on LT-PML datasets with noise.
-<img src='./assets/FLOW.png' width=400>
+
+<img src='./assets/FLOW.png' width=600>
 
 ## :closed_book: Requirements 
 * [Pytorch](https://pytorch.org/)
