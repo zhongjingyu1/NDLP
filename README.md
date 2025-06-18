@@ -36,7 +36,7 @@
 
 **Q5 and Q6:** We will revise Eq. (4) to:
 
-$$c_{ij}=\frac{1}{K^2} \sum_{\tilde{c}_k \in \mathcal{Q}_i} \sum_{\tilde{c}_m \in \mathcal{Q}_j} \frac{\tilde{c}_k \cdot \tilde{c}_m}{\| \tilde{c}_k \| \| \tilde{c}_m \|}, \quad i,j \in L$$
+$$c_{ij}=\frac{1}{K^2} \left( \sum_{\tilde{c}_k \in \mathcal{Q}_i} \right) \left( \sum_{\tilde{c}_m \in \mathcal{Q}_j} \right) \frac{\tilde{c}_k \cdot \tilde{c}_m}{\| \tilde{c}_k \| \| \tilde{c}_m \|}, \quad i,j \in L$$
 
 in the final manuscript to improve clarity and avoid ambiguity.
 
