@@ -27,8 +27,26 @@
 
 
 
+**Q1:** Insightful comment! We emphasize that the PML setting studied in this paper is a key branch of weakly supervised learning. Its validity stems from: (1) Established and widely explored academic precedent in partial label learning [12,30,47,78] and its extensions in multi-label scenarios (PML) [61,43,65]; (2) practical relevance in scenarios like crowdsourced annotation (where the user labelling 'beach' with potentially inaccurate labels such as "holiday" and 'sunshine'). Crucially, this setting is orthogonal to the MLML problem. we emphasize that the comparisons are fair: comparisons under the same PML assumption are made against traditional PML methods (PML-NI, fPML, PML-LRS, PARMAP, PARVLS) and deep PML method (CDCR). Contrasts with MLC methods follow common practice in related fields (e.g., noisy MLL studies [22,60] vs. ADDGCN/CSRA; MLML studies [36,6,5,37] vs. SSGRL/KGGR/ASL/ML-GCN). Furthermore, to validate the PML setting's real-world applicability and CoNeS's practical performance, experiments are conducted on the real-world NUS-WIDE [39]. Results in Table 1 confirm the CoNeS's effectiveness on the real-world dataset.
 
+*Table 1: For 224 resolution, comparison of CoNeS with other methods on the NUS-WIDE dataset.*
+|Method|mAP|CF1|OF1|
+|-|-|-|-|
+|BCE|51.35|46.66|71.02|
+|CSRA[86]|53.32|49.60|71.24|
+|TDRG [81]|54.55|51.66|72.03|
+|CDCR [43]|55.12|51.75|72.08|
+|CoNeS|55.87|52.62|72.26|
 
+**Q2:** We acknowledge that the foundational techniques like CAM and label correlation are well-established. The core novelty of CoNeS lies in systematically addressing the dual contamination (by noise) affecting both features and correlation construction in the PMILC scenario. We empirically observe that CAM for true labels exhibit better coverage concentrated on entire objects (due to the DNN memory effect), while those for noisy labels are comparatively dispersed, making threshold-based filtering of noisy pixels a useful heuristic adaptation for PMILC. Furthermore, while using label correlation is not new, our key innovation tackles the bias introduced by noisy labels specifically into the label correlation–a critical difference from prior work assuming clean (MLIC) or partially missing (MLML) labels, where noise corrupts correlation accuracy. CoNeS achieves robust correlation building through a cascade of CAM-based coarse screening followed by k-means fine filtering for reliable feature patterns, combined with iterative batch-level smoothing to gradually integrate clean semantic relationships into an accurate global correlation. Since MLML methods risk overlearning negative labels, we think that your suggested idea of suppressing negative labels to focus on positive labels is feasible. The NSL can be directly integrated into BCE-based MLML methods. As shown in Table 2, this effectively boosts model attention to positive labels.
+
+*Table 2 Results of NSL embedding into MLML methods.*
+|Method|10% mAP|10% CF1|10% OF1|90% mAP|90% CF1|90% OF1|
+|-|-|-|-|-|-|-|
+|SARB [36]|81.28|67.20|69.41|92.55|86.96|89.73|
+|SARB+NSL|81.62|67.15|69.53|92.63|87.32| 89.25|
+|SST [6]|82.64|66.71|68.94|92.37|86.71| 88.91|
+|SST+NSL|83.27|67.05|68.48|92.51|86.97| 89.15|
 
 
 # NDLP
