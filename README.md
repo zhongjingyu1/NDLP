@@ -1,3 +1,44 @@
+
+**To reviewer p11R:**
+
+**Q1:** Insightful comment! Table 1 correlation measure shows that CoNeS is better than the initial correlation. Validity is confirmed by the performance drop by the initial matrix (original Table 4). Our original statement is inaccurate and will be corrected, including MLIC work discussion. Original Tables 1 and 2 clearly show that direct transfer ASL is invalid, indicating the need for an NSL designed for PMLIC.
+
+|Method|VOC2007||MS-COCO||
+|-|-|-|-|-|
+||Cos|Ssim|Cos|Ssim|
+|Initial correlation|0.9086|0.5852|0.7669|0.2099|
+|CoNeS|0.9801|0.7801|0.9497|0.4413|
+
+*Table 1: Correlation measure with truth label co-occurrence, Cos and Ssim are cosine similarity and ssim.*
+
+---
+
+**Q2:** Insightful comment! We carefully explored your suggestion with Table 2: Outlier-resistant DBSCAN substitution yields no benefit. We interpret that most misattributed features are pre-filtered by CAM, mitigating k-means outlier sensitivity. We also evaluated initial value-optimized k-means++. Surprisingly, it offered no advantage. We think that the slight randomness is analogous to implicit regularization precisely circumvents the fixation on learning biased patterns.
+
+| Method       | mAP   | CF1   | OF1   |
+|--------------|-------|-------|-------|
+| w. k-means++ | 91.80 | 86.41 | 89.44 |
+| w. DBSCAN    | 91.76 | 86.55 | 89.38 |
+| **CoNeS**    | 92.10 | 86.26 | 89.16 |
+
+*Table 2: Ablation study for k-means*
+
+---
+
+**Q3:** Based on your comments, "dispersed" misleadingly emphasizes spatial spread over activation strength, so we will replace it with "weakly activated". "Corrupted pixels" incorrectly implies physical damage; we will use "misattributed pixel regions" instead to denote regions the model activates incorrectly.
+
+**Q4:** Insightful comments! We acknowledge that expanding the connections to broader CAM-based disambiguation and negative suppression would strengthen the innovation.
+
+**Q5:** We appreciate this concern. Clarifying, forcing uniform settings would be unreasonable. Take TPML: it requires 224 resolution to maintain computational efficiency for its linear models. Further, we strictly follow each baseline's original setup. Changing these could hurt performance by misleading true capabilities. This practice is standard in MLIC research ([65,74,81]), preserving evaluation integrity.
+
+
+
+
+
+
+
+
+
 # NDLP
 #### Noise Correction and Distribution Fine-Tuning for Long-Tailed Partial Multi-Label Learning
 
@@ -110,39 +151,4 @@ If you have any questions, please create an issue on this repository or contact 
 If you find this code useful, please consider to cite our work.
 ```
 ``` -->
-
-
-
-**To reviewer p11R:**
-
-**Q1:** Insightful comment! Table 1 correlation measure shows that CoNeS is better than the initial correlation. Validity is confirmed by the performance drop by the initial matrix (original Table 4). Our original statement is inaccurate and will be corrected, including MLIC work discussion. Original Tables 1 and 2 clearly show that direct transfer ASL is invalid, indicating the need for an NSL designed for PMLIC.
-
-|Method|VOC2007||MS-COCO||
-|-|-|-|-|-|
-||Cos|Ssim|Cos|Ssim|
-|Initial correlation|0.9086|0.5852|0.7669|0.2099|
-|CoNeS|0.9801|0.7801|0.9497|0.4413|
-
-*Table 1: Correlation measure with truth label co-occurrence, Cos and Ssim are cosine similarity and ssim.*
-
----
-
-**Q2:** Insightful comment! We carefully explored your suggestion with Table 2: Outlier-resistant DBSCAN substitution yields no benefit. We interpret that most misattributed features are pre-filtered by CAM, mitigating k-means outlier sensitivity. We also evaluated initial value-optimized k-means++. Surprisingly, it offered no advantage. We think that the slight randomness is analogous to implicit regularization precisely circumvents the fixation on learning biased patterns.
-
-| Method       | mAP   | CF1   | OF1   |
-|--------------|-------|-------|-------|
-| w. k-means++ | 91.80 | 86.41 | 89.44 |
-| w. DBSCAN    | 91.76 | 86.55 | 89.38 |
-| **CoNeS**    | 92.10 | 86.26 | 89.16 |
-
-*Table 2: Ablation study for k-means*
-
----
-
-**Q3:** Based on your comments, "dispersed" misleadingly emphasizes spatial spread over activation strength, so we will replace it with "weakly activated". "Corrupted pixels" incorrectly implies physical damage; we will use "misattributed pixel regions" instead to denote regions the model activates incorrectly.
-
-**Q4:** Insightful comments! We acknowledge that expanding the connections to broader CAM-based disambiguation and negative suppression would strengthen the innovation.
-
-**Q5:** We appreciate this concern. Clarifying, forcing uniform settings would be unreasonable. Take TPML: it requires 224 resolution to maintain computational efficiency for its linear models. Further, we strictly follow each baseline's original setup. Changing these could hurt performance by misleading true capabilities. This practice is standard in MLIC research ([65,74,81]), preserving evaluation integrity.
-
 
