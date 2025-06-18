@@ -15,16 +15,12 @@
 ---
 
 **Q2:** Insightful comment! We carefully explored your suggestion with Table 2: Outlier-resistant DBSCAN substitution yields no benefit. We interpret that most misattributed features are pre-filtered by CAM, mitigating k-means outlier sensitivity. We also evaluated initial value-optimized k-means++. Surprisingly, it offered no advantage. We think that the slight randomness is analogous to implicit regularization precisely circumvents the fixation on learning biased patterns.
-
-| Method       | mAP   | CF1   | OF1   |
-|--------------|-------|-------|-------|
-| w. k-means++ | 91.80 | 86.41 | 89.44 |
-| w. DBSCAN    | 91.76 | 86.55 | 89.38 |
-| **CoNeS**    | 92.10 | 86.26 | 89.16 |
-
-*Table 2: Ablation study for k-means*
-
----
+*Table 2 Ablation study for k-means*
+|Method|mAP|CF1|OF1|
+|-|-|-|-|
+|w. k-means++|91.80|86.41|89.44|
+|w. DBSCAN|91.76|86.55|89.38|
+|CoNeS|92.10|86.26|89.16|
 
 **Q3:** Based on your comments, "dispersed" misleadingly emphasizes spatial spread over activation strength, so we will replace it with "weakly activated". "Corrupted pixels" incorrectly implies physical damage; we will use "misattributed pixel regions" instead to denote regions the model activates incorrectly.
 
