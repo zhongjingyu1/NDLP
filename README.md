@@ -117,14 +117,13 @@ If you find this code useful, please consider to cite our work.
 
 **Q1:** Insightful comment! Table 1 correlation measure shows that CoNeS is better than the initial correlation. Validity is confirmed by the performance drop by the initial matrix (original Table 4). Our original statement is inaccurate and will be corrected, including MLIC work discussion. Original Tables 1 and 2 clearly show that direct transfer ASL is invalid, indicating the need for an NSL designed for PMLIC.
 
-| Method             | VOC2007        |                | MS-COCO        |                |
-|--------------------|----------------|----------------|----------------|----------------|
-|                    | Cos            | Ssim           | Cos            | Ssim           |
-|--------------------|----------------|----------------|----------------|----------------|
-| Initial correlation| 0.9086         | 0.5852         | 0.7669         | 0.2099         |
-| **CoNeS**          | **0.9801**     | **0.7801**     | **0.9497**     | **0.4413**     |
+|Method|VOC2007||MS-COCO||
+|-|-|-|-|-|
+||Cos|Ssim|Cos|Ssim|
+|Initial correlation|0.9086|0.5852|0.7669|0.2099|
+|CoNeS|0.9801|0.7801|0.9497|0.4413|
 
-*Table 1: Correlation measure with truth label co-occurrence (Cos = cosine similarity, Ssim = structural similarity)*
+*Table 1: Correlation measure with truth label co-occurrence, Cos and Ssim are cosine similarity and ssim.*
 
 ---
 
