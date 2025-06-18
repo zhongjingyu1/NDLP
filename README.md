@@ -39,8 +39,6 @@
 
 **Q7:** Based on your comments, we acknowledge that $\tau$ requires dataset-specific tuning, which aligns with weakly-supervised learning (e.g., [46, 85]). Our design intentionally filters out misattributed features further through k-means - even if suboptimal $\tau$ allows partial noise into the feature set, k-means clustering will filter out the misattributed features. This preserves dominant feature patterns while diluting noise influence, as evidenced by <1% mAP fluctuation under $\tau$±0.2 perturbations in original Figure 9.  
 
-**Q7:** Based on your comments, we acknowledge that $\tau$ requires dataset-specific tuning, which aligns with weakly-supervised learning (e.g., [46, 85]). Our design intentionally filters out misattributed features further through k-means - even if suboptimal $\tau$ allows partial noise into the feature set, k-means clustering will filter out the misattributed features. This preserves dominant feature patterns while diluting noise influence, as evidenced by <1% mAP fluctuation under $\tau$±0.2 perturbations in original Figure 9.  
-
 
 
 
