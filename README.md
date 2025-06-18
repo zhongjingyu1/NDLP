@@ -34,7 +34,7 @@
 |TDRG|94.32|20.38|
 |Our|80.18|8.95|
 
-**Q5 and Q6:** We will replace $\tilde{q}$ and $\hat{q}$ with $\tilde{c}_k$ and $\tilde{c}_m$ in Eq. (4) and modify it to double summation form in the final manuscript to improve clarity and avoid ambiguity.
+**Q5 and Q6:** We will replace $\tilde{q}$ and $\hat{q}$ with $\tilde{c}_k$ and $\tilde{c}_m$ in Eq. (4) and modify it to double summation ∑∑ form in the final manuscript to improve clarity and avoid ambiguity.
 
 
 **Q7:** Based on your comments, we acknowledge that $\tau$ requires dataset-specific tuning, which aligns with weakly-supervised learning (e.g., [46, 85]). Our design intentionally filters out misattributed features further through k-means - even if suboptimal $\tau$ allows partial noise into the feature set, k-means clustering will filter out the misattributed features. This preserves dominant feature patterns while diluting noise influence, as evidenced by <1% mAP fluctuation under $\tau$±0.2 perturbations in original Figure 9.  
