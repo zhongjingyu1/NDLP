@@ -2,17 +2,12 @@
 **To reviewer p11R:**
 
 **Q1:** Insightful comment! Table 1 correlation measure shows that CoNeS is better than the initial correlation. Validity is confirmed by the performance drop by the initial matrix (original Table 4). Our original statement is inaccurate and will be corrected, including MLIC work discussion. Original Tables 1 and 2 clearly show that direct transfer ASL is invalid, indicating the need for an NSL designed for PMLIC.
-
 *Table 1 Correlation measure with truth label co-occurrence, Cos and Ssim are cosine similarity and ssim.*
 |Method|VOC2007||MS-COCO||
 |-|-|-|-|-|
 ||Cos|Ssim|Cos|Ssim|
 |Initial correlation|0.9086|0.5852|0.7669|0.2099|
 |CoNeS|0.9801|0.7801|0.9497|0.4413|
-
-
-
----
 
 **Q2:** Insightful comment! We carefully explored your suggestion with Table 2: Outlier-resistant DBSCAN substitution yields no benefit. We interpret that most misattributed features are pre-filtered by CAM, mitigating k-means outlier sensitivity. We also evaluated initial value-optimized k-means++. Surprisingly, it offered no advantage. We think that the slight randomness is analogous to implicit regularization precisely circumvents the fixation on learning biased patterns.
 *Table 2 Ablation study for k-means*
