@@ -1,52 +1,26 @@
+**Q1:** We will revise to "Two examples of PML images".
 
-**To reviewer p11R:**
+**Q2:** We will denote all sample variables at line 308 as $\boldsymbol{x}^i$ and harmonize the subsequent sample expressions.
 
-**Q1:** Insightful comment! Table 1 correlation measure shows that CoNeS is better than the initial correlation. Validity is confirmed by the performance drop by the initial matrix (original Table 4). Our original statement is inaccurate and will be corrected, including MLIC work discussion. Original Tables 1 and 2 clearly show that direct transfer ASL is invalid, indicating the need for an NSL designed for PMLIC.
-*Table 1 Correlation measure with truth label co-occurrence, Cos and Ssim are cosine similarity and ssim.*
-|Method|VOC2007||MS-COCO||
-|-|-|-|-|-|
-||Cos|Ssim|Cos|Ssim|
-|Initial correlation|0.9086|0.5852|0.7669|0.2099|
-|CoNeS|0.9801|0.7801|0.9497|0.4413|
+**Q3:** Based on your comments, we will address this in the final version by (1) replacing $z(x,y)$ with $z(u,v)$ to avoid symbol conflicts; (2) explicitly defining "The feature projection $\boldsymbol{z}^i=G(\boldsymbol{v}^i) \in \mathbb{R} ^{D\times W\times H}$ is obtained from the projection network $G(\cdot)$, and $z^i(u,v)$ is the feature vectors of the location $(u,v)$ of the space size $W\times H$".
 
-**Q2:** Insightful comment! We carefully explored your suggestion with Table 2: Outlier-resistant DBSCAN substitution yields no benefit. We interpret that most misattributed features are pre-filtered by CAM, mitigating k-means outlier sensitivity. We also evaluated initial value-optimized k-means++. Surprisingly, it offered no advantage. We think that the slight randomness is analogous to implicit regularization precisely circumvents the fixation on learning biased patterns.
-*Table 2 Ablation study for k-means*
-|Method|mAP|CF1|OF1|
-|-|-|-|-|
-|w. k-means++|91.80|86.41|89.44|
-|w. DBSCAN|91.76|86.55|89.38|
-|CoNeS|92.10|86.26|89.16|
+**Q4:** Insightful comment! We complement the comparison of running time and running memory in Table 1. We find that CoNeS' runtime is significantly lower than CPCL/TDRG and matches lightweight CSRA since **k-means clustering is executed only once at the beginning of each epoch (non-iterative execution)**. In addition, we find that memory usage is lower than ML-GCN/CPCL/TDRG and close to CSRA since **fixed-size FIFO memory bank preventing unbounded growth**.
 
-**Q3:** Based on your comments, "dispersed" misleadingly emphasizes spatial spread over activation strength, so we will replace it with "weakly activated". "Corrupted pixels" incorrectly implies physical damage; we will use "misattributed pixel regions" instead to denote regions the model activates incorrectly.
+*Table 1: For the resolution of 448, training time and running memory profiling with ResNet-101 backbone and RTX4090 GPU on VOC2007 with ρ=0.1 in one epoch.*
+|Method|Training time (Sec)|Running memory (GB)|
+|-|-|-|
+|ML-GCN|85.86|11.97|
+|SSGRL|51.50|5.32|
+|CSRA|54.54|8.17|
+|CPCL|105.89|12.02|
+|TDRG|94.32|20.38|
+|Our|80.18|8.95|
 
-**Q4:** Insightful comments! We acknowledge that expanding the connections to broader CAM-based disambiguation and negative suppression would strengthen the innovation.
+**Q5 and Q6:** We will revise Eq. (4) to $c_{ij}=\frac{1}{K^2}\sum\nolimits_{\tilde{c}_k\in \mathcal{Q} _i}^{}{\sum\nolimits_{\tilde{c}_m\in \mathcal{Q} _j}^{}{\frac{\tilde{c}_k \cdot \tilde{c}_m}{\| \tilde{c}_k \| \| \tilde{c}_m \|}}},i,j\in L$ in the final manuscript to improve clarity and avoid ambiguity.
 
-**Q5:** We appreciate this concern. Clarifying, forcing uniform settings would be unreasonable. Take TPML: it requires 224 resolution to maintain computational efficiency for its linear models. Further, we strictly follow each baseline's original setup. Changing these could hurt performance by misleading true capabilities. This practice is standard in MLIC research ([65,74,81]), preserving evaluation integrity.
+**Q7:** Based on your comments, we acknowledge that $\tau$ requires dataset-specific tuning, which aligns with weakly-supervised learning (e.g., [46, 85]). Our design intentionally filters out misattributed features further through k-means - even if suboptimal $\tau$ allows partial noise into the feature set, k-means clustering will filter out the misattributed features. This preserves dominant feature patterns while diluting noise influence, as evidenced by <1% mAP fluctuation under $\tau$±0.2 perturbations in original Figure 9.  
 
 
-
-
-
-**Q1:** Insightful comment! We emphasize that the PML setting is a key branch of weakly supervised learning. Its validity stems from: (1) Established and widely explored academic precedent in partial label learning [12,30,47] and its extensions in PML scenarios [61,43]; (2) practical relevance in scenarios like crowdsourced annotation (where the user labelling "beach" with potentially inaccurate labels such as "holiday" and "sunshine"). Crucially, this setting is orthogonal to the MLML problem. we emphasize that the comparisons are fair: comparisons under the same PML assumption are made against traditional PML methods (PML-NI, fPML, PML-LRS, PARMAP, PARVLS) and deep PML method (CDCR). Contrasts with MLC methods follow common practice in related fields (e.g., noisy MLL studies [22,60] vs. ADDGCN/CSRA; MLML studies [36,6,5,37] vs. SSGRL/KGGR/ASL/ML-GCN). Further, to validate the PML setting's real-world applicability and CoNeS's practical performance, experiments are conducted on the real-world NUS-WIDE [39]. Results in Table 1 confirm the CoNeS's effectiveness on the real-world dataset.
-
-*Table 1: For 224 resolution, comparison of CoNeS with other methods on the NUS-WIDE dataset.*
-|Method|mAP|CF1|OF1|
-|-|-|-|-|
-|BCE|51.35|46.66|71.02|
-|CSRA[86]|53.32|49.60|71.24|
-|TDRG [81]|54.55|51.66|72.03|
-|CDCR [43]|55.12|51.75|72.08|
-|CoNeS|55.87|52.62|72.26|
-
-**Q2:** We acknowledge that the foundational techniques like CAM and label correlation are well-established. The core novelty of CoNeS lies in systematically addressing the dual contamination (by noise) affecting both features and correlation construction in the PMILC scenario. We empirically observe that CAM for true labels exhibit better coverage concentrated on entire objects (due to the DNN memory effect), while those for noisy labels are comparatively dispersed, making threshold-based filtering of noisy pixels a useful heuristic adaptation for PMILC. Furthermore, while using label correlation is not new, our key innovation tackles the bias introduced by noisy labels specifically into the label correlation–a critical difference from prior work assuming clean (MLIC) or partially missing (MLML) labels, where noise corrupts correlation accuracy. CoNeS achieves robust correlation building through a cascade of CAM-based coarse screening followed by k-means fine filtering for reliable feature patterns, combined with iterative batch-level smoothing to gradually integrate clean semantic relationships into an accurate global correlation. Since MLML methods risk overlearning negative labels, we think that your suggested idea of suppressing negative labels to focus on positive labels is feasible. The NSL can be directly integrated into BCE-based MLML methods. As shown in Table 2, this effectively boosts model attention to positive labels.
-
-*Table 2 Results of NSL embedding into MLML methods.*
-|Method|10%: mAP|CF1|OF1|90%: mAP|CF1|OF1|
-|-|-|-|-|-|-|-|
-|SARB [36]|81.28|67.20|69.41|92.55|86.96|89.73|
-|SARB+NSL|81.62|67.15|69.53|92.63|87.32| 89.25|
-|SST [6]|82.64|66.71|68.94|92.37|86.71| 88.91|
-|SST+NSL|83.27|67.05|68.48|92.51|86.97| 89.15|
 
 
 # NDLP
