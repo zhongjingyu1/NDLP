@@ -16,7 +16,7 @@
 |TDRG|94.32|20.38|
 |Our|80.18|8.95|
 
-**Q5 and Q6:** We will revise Eq. (4) to $c_{ij}=\frac{1}{K^2}\sum\nolimits_{\tilde{c}_k\in \mathcal{Q} _i}^{}{\sum\nolimits_{\tilde{c}_m\in \mathcal{Q} _j}^{}{\frac{\tilde{c}_k \cdot \tilde{c}_m}{\| \tilde{c}_k \| \| \tilde{c}_m \|}}},i,j\in L$ in the final manuscript to improve clarity and avoid ambiguity.
+**Q5 and Q6:** We will revise Eq. (4) to $$c_{ij}=\frac{1}{K^2}\sum\nolimits_{\tilde{c}_k\in \mathcal{Q} _i}^{}{\sum\nolimits_{\tilde{c}_m\in \mathcal{Q} _j}^{}{\frac{\tilde{c}_k \cdot \tilde{c}_m}{\| \tilde{c}_k \| \| \tilde{c}_m \|}}},i,j\in L$$ in the final manuscript to improve clarity and avoid ambiguity.
 
 **Q7:** Based on your comments, we acknowledge that $\tau$ requires dataset-specific tuning, which aligns with weakly-supervised learning (e.g., [46, 85]). Our design intentionally filters out misattributed features further through k-means - even if suboptimal $\tau$ allows partial noise into the feature set, k-means clustering will filter out the misattributed features. This preserves dominant feature patterns while diluting noise influence, as evidenced by <1% mAP fluctuation under $\tau$±0.2 perturbations in original Figure 9.  
 
