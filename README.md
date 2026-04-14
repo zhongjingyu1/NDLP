@@ -35,6 +35,12 @@ Shell
         ├── longtail2012
             ├── class_freq.pkl
             ├── class_split.pkl
+    ├── nuswide
+            ├── nw_lt_train.txt
+            ├── nw_lt_test.txt
+            ├── nw_labels.txt
+            ├── class_freq.pkl
+            ├── class_split.pkl
 ├── data
     ├── coco
         ├── train2017
