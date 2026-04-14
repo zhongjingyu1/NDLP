@@ -61,9 +61,13 @@ Shell
                     ...
                 ├── SegementationClass
                 ├── SegementationObject
+    ├── nuswide
+        ├── images
+            ├── 0_2124494179_b039ddccac_m.jpg
+            ...
 ```
 ## :page_with_curl: Usage
-### VOC-MLT
+### VOC-PMLT
 ```bash
 python lmpt/train.py configs/voc/LT_resnet50_pfc_DB.py \
 --dataset 'voc-lt' \
@@ -75,7 +79,7 @@ python lmpt/train.py configs/voc/LT_resnet50_pfc_DB.py \
 --eta 0.9 \
 --alpha_range 0.4,0.8 \
 ```
-### COCO-MLT
+### COCO-PMLT or NW-PMLT
 ```bash
 python lmpt/train.py configs/coco/LT_resnet50_pfc_DB.py \ 
 --dataset 'voc-lt' \
