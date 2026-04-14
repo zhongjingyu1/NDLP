@@ -41,7 +41,7 @@ model = dict(
             loss_weight=1.0,
             # TODO: replace with your real class frequency file if required by your ResampleLoss
             # Example generated/expected location:
-            freq_file='C:/Users/Windows 10/Desktop/LMPT-main/data/nuswide/class_freq.pkl'
+            freq_file='../appendix/nuswide/class_freq.pkl'
         )))
 
 # model training and testing settings
@@ -49,19 +49,9 @@ train_cfg = dict()
 test_cfg = dict()
 
 # dataset settings
-# TODO: change this to the actual dataset class name implemented in your mllt codebase.
 dataset_type = 'NUSWideDataset'
-
-# TODO: image root directory for NUS-WIDE images
-data_root = 'F:/mnt/SSD/det/nuswide/'
-
-# directory that stores LT split files such as:
-# - nw_lt_train.txt
-# - nw_lt_test.txt
-# - nw_labels.txt
-# - class_split.pkl
-# - img_id.pkl (if your dataset class uses it)
-online_data_root = 'C:/Users/Windows 10/Desktop/LMPT-main/data/nuswide/'
+data_root = '../data/nuswide/'
+online_data_root = '../appendix/nuswide/'
 
 img_norm_cfg = dict(
     mean=[123.675, 116.28, 103.53],
