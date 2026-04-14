@@ -16,8 +16,9 @@ Multi-label classifiers in practice often face two departures from standard benc
 ## :clipboard: Dataset 
 To evaluate/train Long-Tailed Partial Multi-Label Learning, first, the [VOC2012/2007](http://host.robots.ox.ac.uk/pascal/VOC/), [MSCOCO](https://cocodataset.org/#download) and [NUS-WIDE](https://huggingface.co/datasets/Lxyhaha/NUS-WIDE) datasets need to be downloaded. The image paths, labels, and captions for the VOC-MLT and COCO-MLT datasets can be found:
 
-* [COCO-PMLT](https://github.com/wutong16/DistributionBalancedLoss/tree/master/appendix/coco)
-* [VOC-PMLT](https://github.com/wutong16/DistributionBalancedLoss/tree/master/appendix/VOCdevkit)
+* [COCO-PMLT](https://github.com/zhongjingyu1/NDLP/tree/master/appendix)
+* [VOC-PMLT](https://github.com/zhongjingyu1/NDLP/tree/master/appendix)]
+* [NW-PMLT](https://github.com/zhongjingyu1/NDLP/tree/master/appendix)
 ```
 Shell
 ├── appendix
