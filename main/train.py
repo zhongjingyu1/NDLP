@@ -22,14 +22,14 @@ def get_args_parser():
     parser = argparse.ArgumentParser('Noise Correction and Distribution Fine-Tuning', add_help=False)
     parser.add_argument('--device', default='cuda', help='device to use for training / testing')
     parser.add_argument('--seed', default='0', type=int, help='seed')
-    parser.add_argument('--config', default='../configs/voc/LT_resnet50_pfc_DB.py', choices=['../configs/voc/LT_resnet50_pfc_DB.py', '../configs/coco/LT_resnet50_pfc_DB.py'], help='train config file path')
-    parser.add_argument('--dataset', default='voc-lt', type=str, choices=['voc-lt', 'coco-lt'], help='dataset name')
+    parser.add_argument('--config', default='../configs/voc/LT_resnet50_pfc_DB.py', choices=['../configs/voc/LT_resnet50_pfc_DB.py', '../configs/coco/LT_resnet50_pfc_DB.py','../configs/nuswide/LT_resnet50_pfc_DB_nuswide.py'], help='train config file path')
+    parser.add_argument('--dataset', default='voc-lt', type=str, choices=['voc-lt', 'coco-lt', 'nus-wide'], help='dataset name')
     parser.add_argument('--epochs', default=10, type=int, help='train epochs')
     parser.add_argument('--lr', default=0.01, type=float, help='learning rate for optim')
     parser.add_argument('--test_epochs', default=8, type=int, help='train epochs')
     parser.add_argument('--gamma', default=3, type=float, help='gamma of loss function')
     parser.add_argument('--data_dir', default='../codes/', type=str, help='experiment directory for loading pre-generated data')
-    parser.add_argument('--partial_rate', default=0.3, type=float, choices=[0.05, 0.1, 0.3, 0.5], help='{COCO: 0.05, 0.1} // {VOC: 0.3, 0.5}')
+    parser.add_argument('--partial_rate', default=0.3, type=float, choices=[0.05, 0.1, 0.3, 0.5], help='{COCO/NUS: 0.05, 0.1} // {VOC: 0.3, 0.5}')
     parser.add_argument('--eta', default=0.9, type=float, help='final weight of reliable sample loss')
     parser.add_argument('--alpha_range', default='0.4,0.8', type=str, help='ratio of clean labels (alpha)')
     parser.add_argument('--gpus', type=int, default=1, help='number of gpus to use ''(only applicable to non-distributed training)')
@@ -66,10 +66,12 @@ def main(args):
     """ 
         model
     """
-    if args.dataset=='coco-lt':
+    if args.dataset == 'coco-lt':
         args.num_class = 80
-    elif args.dataset=='voc-lt':
+    elif args.dataset == 'voc-lt':
         args.num_class = 20
+    elif args.dataset == 'nus-wide':
+        args.num_class = 81
 
     model = build_classifier(
         cfg.model, train_cfg=cfg.train_cfg, test_cfg=cfg.test_cfg)
