@@ -4,6 +4,7 @@ from .coco import CocoDataset
 from .Lvis import LvisDataset
 from .voc import VOCDataset
 from .miniImagenet import miniImagenetDataset
+from .nuswide import NUSWideDataset
 from .loader import GroupSampler, DistributedGroupSampler, build_dataloader
 from .utils import to_tensor, random_scale, get_dataset
 from .dataset_wrappers import ConcatDataset, RepeatDataset
@@ -12,7 +13,8 @@ from .registry import DATASETS
 from .builder import build_dataset
 
 __all__ = [
-    'CustomDataset','CocoDataset', 'miniImagenetDataset', 'LvisDataset', 'GroupSampler',
-    'DistributedGroupSampler', 'build_dataloader', 'to_tensor', 'random_scale',
-    'get_dataset', 'ExtraAugmentation',
+    'CustomDataset', 'CocoDataset', 'VOCDataset', 'NUSWideDataset',
+    'miniImagenetDataset', 'LvisDataset', 'GroupSampler',
+    'DistributedGroupSampler', 'build_dataloader', 'to_tensor',
+    'random_scale', 'get_dataset', 'ExtraAugmentation',
 ]
