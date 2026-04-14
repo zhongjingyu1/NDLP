@@ -99,6 +99,12 @@ python lmpt/train.py configs/coco/LT_resnet50_pfc_DB.py \
 | :---------: |:---------:| :------------: | :-----------: | :---------: | :---------: | :----------------: |
 |  ResNet-50  |    0.3    |    59.51   |    59.54  |  70.33   | 51.38   | [model](https://drive.google.com/drive/folders/1ju2zTv6pOuso8wBixN4RqLtszU8d8WDk?hl=zh-cn)   |
 |  ResNet-50  |    0.5    |    40.76   |    43.09  |  52.59   | 30.13   | [model](https://drive.google.com/drive/folders/1ju2zTv6pOuso8wBixN4RqLtszU8d8WDk?hl=zh-cn)   |
+
+#### NW-MLT
+|   Backbone  | $$\rho$$  |    Total   |    Head   |  Medium  |   Tail  |      Download      |
+| :---------: |:---------:| :------------: | :-----------: | :---------: | :---------: | :----------------: |
+|  ResNet-50  |    0.05   |    29.43   |    33.04  |  23.31   | 51.78   | [model](https://drive.google.com/drive/folders/1ju2zTv6pOuso8wBixN4RqLtszU8d8WDk?hl=zh-cn)   |
+
 ## :heartpulse: Acknowledgements
 We use code from [DBL](https://github.com/wutong16/DistributionBalancedLoss) and [LMPT](https://github.com/richard-peng-xia/LMPT). We thank the authors for releasing their code.
 ## :mailbox_closed: Contact
