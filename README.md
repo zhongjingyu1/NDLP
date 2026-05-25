@@ -1,5 +1,8 @@
 ## NDLP--Noise Correction and Distribution Fine-Tuning for Long-Tailed Partial Multi-Label Learning
 
+The article "Noise Correction and Distribution Fine-Tuning for Long-Tailed Partial Multi-Label Learning" has been accepted by **Pattern Recognition (PR 2026)**.
+
+
 ## :video_camera: Problem description of LT-PML
 In this paper, we introduce a new and more realistic data setting for MLC, termed long-tailed partial multi-label learning (LT-PML), which simultaneously incorporates PML and LT distribution setups. As shown in Figure 1 (a), LT-PML presents two intertwined challenges: 1) Mutual hindrance between noisy annotations and LT distributions. The presence of candidate label sets prevent obtaining the class-wise label frequency priors, yet which is critical for existing LT methods. Moreover, the inherent LT distribution causes head classes to dominate training datasets, leading to under-learning of tail classes. This imbalance makes disambiguation of rare classes more challenging. Meanwhile, label ambiguity tends to disproportionately affect tail classes. In practice, when annotators are uncertain, they are more likely to assign ambiguous labels to infrequent classes, since these classes are less familiar and less visually distinctive (Figure 1 (b)). 2) Label co-occurrence. Label co-occurrence is common in natural images. As shown in Figure 1 (c), a rare label ``pomegranate`` may co-occur with a frequent label ``computer``. Naive resampling become ineffective. Oversampling this image to compensate for the rare class inevitably increases the exposure of the head class as well, thereby corrupting their learned representations.
 
