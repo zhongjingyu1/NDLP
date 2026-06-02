@@ -1,6 +1,6 @@
 ## NDLP--Noise Correction and Distribution Fine-Tuning for Long-Tailed Partial Multi-Label Learning
 
-The article "Noise Correction and Distribution Fine-Tuning for Long-Tailed Partial Multi-Label Learning" has been accepted by **Pattern Recognition (PR 2026)**.
+The article "[Noise Correction and Distribution Fine-Tuning for Long-Tailed Partial Multi-Label Learning](https://www.sciencedirect.com/science/article/pii/S0031320326010617)" has been accepted by **Pattern Recognition (PR 2026)**.
 
 
 ## :video_camera: Problem description of LT-PML
